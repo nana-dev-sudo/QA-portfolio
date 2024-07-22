@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
+:root {
+  --blue: #0e0620;
+  --white: #fff;
+  --orange: #E77A41;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:"Nunito Sans";
+  color: var(--blue);
+  font-size: 1em;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  height: 100vh;
+  padding: 20px;
+}
+
+img {
+  width: 40%;
+  border-radius: 20px;
+}
+
+.container > div {
+  width: 40%;
+}
+a {
+  font-family:"Nunito Sans";
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 7.5em;
+  margin: 15px 0px;
+  font-weight:bold;
+}
+
+h2 {
+  font-weight:bold;
+}
+
+.btn {
+  z-index: 1;
+  overflow: hidden;
+  background: transparent;
+  position: relative;
+  padding: 8px 50px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1em;
+  letter-spacing: 2px;
+  transition: 0.2s ease;
+  font-weight: bold;
+  margin: 5px 0px;
+  &.orange {
+    border: 4px solid var(--orange);
+    color: var(--blue);
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0%;
+      height: 100%;
+      background: var(--orange);
+      z-index: -1;
+      transition: 0.2s ease;
+    }
+    &:hover {
+      color: var(--white);
+      background: var(--orange);
+      transition: 0.2s ease;
+      &:before {
+        width: 100%;
+        border-radius: 30px;
+      }
+    }
+  }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  img {
+    width: 90%;
+  }
+  
+  .container > div {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-width:768px) {
+  body {
+    display:block;
+  }
+  .container {
+    margin-top:70px;
+    margin-bottom:70px;
+  }
+
+  h1 {
+    font-size: 5.7rem;
+  }
+} 
